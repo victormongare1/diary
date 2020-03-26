@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Diary } from '../diary';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-diary',
@@ -9,18 +10,22 @@ import { Diary } from '../diary';
 export class DiaryComponent implements OnInit {
 
   items : Diary[]=[
-  new Diary(1,"I fell down" ," I felt so embarrassed"), 
-  new Diary(2 ,"I passed exams",' I felt sense of achievement'),
-  new Diary(3 ,'I visited friends  ' ,' I was feeling joyful'),
-  new Diary(4 ,'I stayed at home all day','nothing new day was nonchalant'),
-  new Diary(5 ,'I have a lot of assignment','I was so exhausted and feeling bored')
+  new Diary(1,"I fell down" ," I felt so embarrassed" ,new Date(2020,4,1)), 
+  new Diary(2 ,"I passed exams",' I felt sense of achievement',new Date(2020,4,2)),
+  new Diary(3 ,'I visited friends  ' ,' I was feeling joyful' ,new Date(2020,4,3)),
+  new Diary(4 ,'I stayed at home all day','nothing new day was nonchalant',new Date(2020,4,4)),
+  new Diary(5 ,'I have a lot of assignment','I was so exhausted and feeling bored' ,new Date(2020,4,5))
   ];
   toggleThoughts(index){
     this.items[index].showThought= !this.items[index].showThought;
   }
   removeItem(toDelete , index){
     if (toDelete){
-      this.items.splice(index,1)
+      let sureDelete= confirm(`are you sure you want to delete this item ?`)
+
+      if(sureDelete){
+        this.items.splice(index,1)
+      }
     }
   }
 

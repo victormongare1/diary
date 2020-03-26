@@ -10,7 +10,7 @@
       <h2>MY WEEK</h2>
       <ul>
         <div *ngFor="let item of items ; let i =index ">
-          <li>{{item.name}}</li>
+          <li appHighlight> {{item.name}} on {{item.diaryDate|date}}</li>
             <button (click)= "toggleThoughts(i)">Thoughts</button>
             <app-diary-thought *ngIf="item.showThought" [item]="item" (toDelete)="removeItem($event,i)"></app-diary-thought>
 
