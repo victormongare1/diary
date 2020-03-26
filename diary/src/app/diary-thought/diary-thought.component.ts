@@ -1,4 +1,4 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Diary } from '../diary';
 
 @Component({
@@ -7,8 +7,8 @@ import { Diary } from '../diary';
   styleUrls: ['./diary-thought.component.css']
 })
 export class DiaryThoughtComponent implements OnInit {
-  
-  @Input() item : Diary;
+
+  @Input() item: Diary;
 
   constructor() { }
 

@@ -9,10 +9,12 @@
     <div >
       <h2>MY WEEK</h2>
       <ul>
-        <li *ngfor="let item of items">
-          {{item.name}}
-          <app-diary-thought [item]="item"></app-diary-thought>
-        </li>
+        <div *ngFor="let item of items ; let i =index ">
+          <li>{{item.name}}</li>
+            <button (click)= "toggleThoughts(i)">Thoughts</button>
+            <app-diary-thought *ngIf="item.showThought" [item]="item"></app-diary-thought>
+
+        </div>
       </ul>
 
     </div>
