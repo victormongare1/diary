@@ -1,5 +1,6 @@
 export class Diary {
-  id : number;
-  name : string;
-  thought : string;
+ showThought : boolean;
+ constructor (public id : number, public name : string, public thought : string){
+   this.showThought = false;
+ }
 }
