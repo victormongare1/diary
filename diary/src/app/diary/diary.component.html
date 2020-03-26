@@ -11,8 +11,10 @@
       <ul>
         <li *ngfor="let item of items">
           {{item.name}}
+          <app-diary-thought [item]="item"></app-diary-thought>
         </li>
       </ul>
+
     </div>
   </body>  
 </html>
