@@ -1,0 +1,17 @@
+.jumbotron{
+  text-align: center;
+  font-family: 'Trade Winds';
+  font-size: 40px;
+  background-color: red;
+}
+.card{
+  font-family: 'Yeon Sung';
+  background-color: red;
+}
+h2{
+  text-align: center;
+  font-family: 'Lobster';
+}
+body{
+  background-color: black;
+}

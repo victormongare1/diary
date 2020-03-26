@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Diary } from '../diary';
-import { $ } from 'protractor';
 
 @Component({
   selector: 'app-diary',
@@ -8,7 +7,7 @@ import { $ } from 'protractor';
   styleUrls: ['./diary.component.css']
 })
 export class DiaryComponent implements OnInit {
-
+  newItem = new Diary(0 , "" , "" ,new Date ())
   items : Diary[]=[
   new Diary(1,"I fell down" ," I felt so embarrassed" ,new Date(2020,4,1)), 
   new Diary(2 ,"I passed exams",' I felt sense of achievement',new Date(2020,4,2)),
@@ -28,7 +27,13 @@ export class DiaryComponent implements OnInit {
       }
     }
   }
-
+  addNewItem(item){
+    let itemLength = this.items.length;
+    item.id = itemLength+1;
+    item.diaryDate = new Date(item.diaryDate)
+    this.items.push(item)
+  }
+ 
   constructor() { }
 
   ngOnInit(): void {

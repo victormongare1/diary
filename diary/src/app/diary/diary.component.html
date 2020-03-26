@@ -4,19 +4,32 @@
     <title>DIARY</title>
   </head>
   <body>
-    <h1>DIARY</h1>
-    <p>A collection of my thoughts</p><br />
-    <div >
-      <h2>MY WEEK</h2>
-      <ul>
-        <div *ngFor="let item of items ; let i =index ">
-          <li appHighlight> {{item.name}} on {{item.diaryDate|date}}</li>
-            <button (click)= "toggleThoughts(i)">Thoughts</button>
-            <app-diary-thought *ngIf="item.showThought" [item]="item" (toDelete)="removeItem($event,i)"></app-diary-thought>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>DIARY</h1>
+        <p>A collection of my thoughts</p><br />
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <h2>MY WEEK</h2>
+            <ul>
+              <div *ngFor="let item of items ; let i =index ">
+                <li appHighlight> {{item.name}} on {{item.diaryDate|date}}</li>
+                  <button (click)= "toggleThoughts(i)" class="btn btn-primary">Thoughts</button>
+                  <app-diary-thought *ngIf="item.showThought" [item]="item" (toDelete)="removeItem($event,i)"></app-diary-thought>
 
+              </div>
+            </ul>
+          </div>
         </div>
-      </ul>
+        <div class="col-md-6">
+          <div class="card">
+            <app-diary-form (addItem)="addNewItem($event)"></app-diary-form>
+          </div>
+        </div>
 
+      </div>
     </div>
   </body>  
 </html>
