@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input ,Output, EventEmitter } from '@angular/core';
 import { Diary } from '../diary';
 
 @Component({
@@ -9,6 +9,11 @@ import { Diary } from '../diary';
 export class DiaryThoughtComponent implements OnInit {
 
   @Input() item: Diary;
+  @Output() toDelete= new EventEmitter <boolean>();
+
+  itemDelete ( remove :boolean ) {
+    this.toDelete.emit(remove);
+  }
 
   constructor() { }
 

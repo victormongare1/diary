@@ -18,6 +18,11 @@ export class DiaryComponent implements OnInit {
   toggleThoughts(index){
     this.items[index].showThought= !this.items[index].showThought;
   }
+  removeItem(toDelete , index){
+    if (toDelete){
+      this.items.splice(index,1)
+    }
+  }
 
   constructor() { }
 

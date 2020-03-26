@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DiaryComponent } from './diary/diary.component';
 import { DiaryThoughtComponent } from './diary-thought/diary-thought.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DiaryComponent,
-    DiaryThoughtComponent
+    DiaryThoughtComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
