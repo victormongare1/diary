@@ -5,7 +5,15 @@
   </head>
   <body>
     <h1>DIARY</h1>
-    <p>A collection of my thoughts</p>
+    <p>A collection of my thoughts</p><br />
+    <div >
+      <h2>MY WEEK</h2>
+      <ul>
+        <li *ngfor="let item of items">
+          {{item.name}}
+        </li>
+      </ul>
+    </div>
   </body>  
 </html>
 

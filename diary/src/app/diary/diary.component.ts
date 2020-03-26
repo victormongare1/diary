@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Diary } from '../diary';
 
 @Component({
   selector: 'app-diary',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./diary.component.css']
 })
 export class DiaryComponent implements OnInit {
+
+  items : Diary[]=[
+    
+  ]
 
   constructor() { }
 
